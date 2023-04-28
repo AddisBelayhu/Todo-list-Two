@@ -1,0 +1,79 @@
+$color-main: #4fc08d;
+$font-family: 'Source Sans Pro', sans-serif;
+
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga", "kern";
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100%;
+    background: linear-gradient(210deg, lighten($color-main, 20%), $color-main);
+  }
+  
+  body {
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-family;
+  }
+
+  button {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    &:focus {
+        outline: none;
+      }
+    &:hover {
+        cursor: pointer;
+      }
+  }
+
+  .app {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1em;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(25,25,25,.25);
+  }
+
+  .btn {
+    font-size: 14px;
+    margin: 0 .5em;
+    border-radius: 2em;
+    padding: 0.75em 1.5em;
+    cursor: pointer;
+    background: none;
+    color: darken($color-main, 20%);
+    border: 1px solid;
+    letter-spacing: 1px;
+    font-family: $font-family;
+    color: #4fc08d;
+    border: $color-main 1px solid;
+    transition: 250ms ease-out;
+    &:hover, &:focus {
+      color: #fff;
+      background: $color-main;
+    }
+    
+    
+    
+  }
+  
+
+  
+  
