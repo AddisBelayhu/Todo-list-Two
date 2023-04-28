@@ -68,12 +68,95 @@ $font-family: 'Source Sans Pro', sans-serif;
     &:hover, &:focus {
       color: #fff;
       background: $color-main;
+    }  
+     }
+
+  .form {
+    width: 100%;
+    padding: 1.5rem 1rem 0 1rem;
+    display: flex;
+    &__input {
+      width: 100%;
+      font-size: 14px;
+      margin: 0 .5em;
+      border-radius: 2em;
+      padding: 0.75em 1.5em;
+      background: none;
+      font-family: $font-family;
+      border: #e3e3e3 1px solid;
+      transition: border 250ms ease-out;
+      &:focus {
+        border: $color-main 1px solid;
+        outline: none;
+      }
     }
-    
-    
-    
+    &__input,
+    &__submit-btn {
+    }
   }
   
+  .todo-list {
+    $block: #{&};
+    width: 100%;
+    padding: 0 1rem;
+    flex: 1;
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .5em;
+      margin-bottom: .5em;
+      border-radius: 3px;
+      transition: 200ms;
+      color: $color-main;
+      &:last-child { margin-bottom: 0; }
+      &.complete { 
+        color: lightgreen;
+        #{$block}__item-content {
+          &:after {
+            background: lightgreen;
+          }
+        }
+      }
+    }
 
+    &__item-content {
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          height: 1px;
+          background: $color-main;
+          transition: 250ms ease-out;
+          transform-origin: center;
+          transform: scalex(0);
+        }
+        &:hover, &:focus {
+            &:after {
+              transform: scalex(1);
+            }
+          }
+        }
+    
+        &__item-remove {
+            margin-left: .5em;
+            background: none;
+            border: 1px solid;
+            color: inherit;
+            padding: 0;
+            line-height: 1;
+            width: 2em; 
+            height: 2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 80%;
+          }
+        }
+        
   
   
